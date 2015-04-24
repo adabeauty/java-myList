@@ -1,4 +1,4 @@
-import com.thoughtworks.gradle.MyList;
+import com.thoughtworks.myList.MyList;
 
 public class Main {
 
@@ -9,7 +9,6 @@ public class Main {
         myList.add(", ");
         myList.add("world");
         myList.add("!");
-
 
         String string = "";
         for(int i=0; i<myList.size(); i++){
