@@ -2,7 +2,7 @@ package com.thoughtworks.myList;
 
 import java.util.*;
 
-public class MyList<T> implements List {
+public class MyList<T> implements List<T> {
 
     private int size = 0;
     private Object[] obj;
@@ -41,7 +41,7 @@ public class MyList<T> implements List {
     }
 
     @Override
-    public boolean add(Object o) {
+    public boolean add(T o) {
         if(o != null){
             size++;
             obj= Arrays.copyOf(obj, size);
@@ -71,11 +71,11 @@ public class MyList<T> implements List {
     }
 
     @Override
-    public boolean addAll(Collection c) {
+    public boolean addAll(Collection<? extends T> c) {
 
         Object[] cArray = c.toArray();
         for(int i=0; i<cArray.length; i++){
-            add(cArray[i]);
+            add((T) cArray[i]);
         }
         return cArray.length != 0;
     }
@@ -111,8 +111,8 @@ public class MyList<T> implements List {
     }
 
     @Override
-    public Object get(int index) {
-        return obj[index];
+    public T get(int index) {
+        return (T) obj[index];
     }
 
     @Override
@@ -138,8 +138,8 @@ public class MyList<T> implements List {
     }
 
     @Override
-    public Object remove(int index) {
-        Object removeElement = obj[index];
+    public T remove(int index) {
+        T removeElement = (T) obj[index];
         for(int i =index; i<obj.length-1; i++){
             obj[i] = obj[i+1];
         }
@@ -210,22 +210,5 @@ public class MyList<T> implements List {
     public ListIterator listIterator(int index) {
         return null;
     }
-
-//    private class Itr<E> implements Iterator<E> {
-//
-//        int nextIndex = 0;
-//
-//        @Override
-//        public boolean hasNext() {
-//            return nextIndex < size;
-//        }
-//
-//        @Override
-//        public E next() {
-//            if(nextIndex >= size)
-//                throw new IndexOutOfBoundsException("只有" + size + "元素");
-//            return (E) obj[nextIndex++];
-//        }
-//    }
 }
 
