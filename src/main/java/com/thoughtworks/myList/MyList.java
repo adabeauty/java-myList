@@ -2,10 +2,6 @@ package com.thoughtworks.myList;
 
 import java.util.*;
 
-/**
- * Created by hgwang on 4/24/15.
- */
-
 public class MyList<T> implements List {
 
     private int size = 0;

@@ -2,9 +2,6 @@ package com.thoughtworks.myList;
 
 import java.util.Iterator;
 
-/**
- * Created by hgwang on 4/27/15.
- */
 public class MyIterator<E> implements Iterator<E> {
 
     Object[] myList;
