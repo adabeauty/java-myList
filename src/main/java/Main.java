@@ -1,9 +1,11 @@
 import com.thoughtworks.myList.MyList;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
 
         myList.add("hello");
         myList.add(", ");

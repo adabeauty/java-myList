@@ -11,19 +11,19 @@ public class MyListTest {
 
     @Test
     public void should_return_size_of_list (){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         assertThat(myList.size()).isEqualTo(0);
     }
 
     @Test
     public void can_judge_whether_list_is_empty(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         assertThat(myList.isEmpty()).isEqualTo(true);
     }
 
     @Test
     public void can_judge_whether_include_special_object(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         assertThat(myList.contains("hello")).isEqualTo(false);
 
         myList.add("hello");
@@ -32,7 +32,7 @@ public class MyListTest {
 
     @Test
     public void can_transfer_list_to_array(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("hello");
 
         assertThat(myList.toArray().length).isEqualTo(1);
@@ -40,7 +40,7 @@ public class MyListTest {
 
     @Test
     public void can_add_a_object_to_list(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("hello");
 
         assertThat(myList.size()).isEqualTo(1);
@@ -48,7 +48,7 @@ public class MyListTest {
 
     @Test
     public void can_remove_special_object(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("hello");
         myList.add("world");
 
@@ -68,7 +68,7 @@ public class MyListTest {
 
         assertThat(list.size()).isEqualTo(2);
 
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         assertThat(myList.addAll(list)).isEqualTo(true);
         assertThat(myList.size()).isEqualTo(2);
 
@@ -81,7 +81,7 @@ public class MyListTest {
 
         List<String> list = new ArrayList<String>();
 
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("a");
         myList.add("b");
 
@@ -93,7 +93,7 @@ public class MyListTest {
 
     @Test
     public void should_clear_all_elements(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
 
         myList.add("world");
         myList.clear();
@@ -103,7 +103,7 @@ public class MyListTest {
 
     @Test
     public void should_get_element_by_index(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("hello");
         myList.add("world");
 
@@ -133,7 +133,7 @@ public class MyListTest {
 
     @Test
     public void can_remove_element_by_index(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("good");
         myList.add("morning");
         myList.add("world");
@@ -144,7 +144,7 @@ public class MyListTest {
 
     @Test
     public void should_get_the_index_of_element(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("good");
         myList.add("morning");
         myList.add("world");
@@ -155,7 +155,7 @@ public class MyListTest {
 
     @Test
     public void should_get_last_index_of_element(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("good");
         myList.add("morning");
         myList.add("good");
@@ -166,7 +166,7 @@ public class MyListTest {
 
     @Test
     public void should_get_range_index_of_list(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("good");
         myList.add("morning");
         myList.add("world");
@@ -177,7 +177,7 @@ public class MyListTest {
 
     @Test
     public void should_return_a_iterator(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("hello");
         myList.add("world");
 
@@ -187,7 +187,7 @@ public class MyListTest {
 
     @Test
     public void should_return_next_element(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("hello");
         myList.add("world");
 
