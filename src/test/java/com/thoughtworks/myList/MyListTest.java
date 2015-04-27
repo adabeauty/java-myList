@@ -3,6 +3,7 @@ package com.thoughtworks.myList;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
@@ -111,7 +112,7 @@ public class MyListTest {
 
     @Test
     public void should_set_element_and_return_previous_one(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
         myList.add("green");
 
         assertThat(myList.set(0, "red")).isEqualTo("green");
@@ -119,7 +120,7 @@ public class MyListTest {
 
     @Test
     public void can_insert_element_by_index(){
-        MyList<String> myList = new MyList<String>();
+        List<String> myList = new MyList<String>();
 
         myList.add("I");
         myList.add("girl");
@@ -172,5 +173,26 @@ public class MyListTest {
 
         assertThat(myList.subList(1,2).size()).isEqualTo(2);
         assertThat(myList.subList(1,2).get(0)).isEqualTo("morning");
+    }
+
+    @Test
+    public void should_return_a_iterator(){
+        MyList<String> myList = new MyList<String>();
+        myList.add("hello");
+        myList.add("world");
+
+        Iterator myListIterator = myList.iterator();
+        assertThat(myListIterator.hasNext()).isEqualTo(true);
+    }
+
+    @Test
+    public void should_return_next_element(){
+        MyList<String> myList = new MyList<String>();
+        myList.add("hello");
+        myList.add("world");
+
+        Iterator<String> myListIterator = myList.iterator();
+        assertThat(myListIterator.next()).isEqualTo("hello");
+        assertThat(myListIterator.next()).isEqualTo("world");
     }
 }

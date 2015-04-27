@@ -39,11 +39,6 @@ public class MyList<T> implements List {
     }
 
     @Override
-    public Iterator iterator() {
-        return null;
-    }
-
-    @Override
     public Object[] toArray() {
 
         return  Arrays.copyOf(obj, size);
@@ -178,17 +173,6 @@ public class MyList<T> implements List {
         }
         return index;
     }
-
-    @Override
-    public ListIterator listIterator() {
-        return null;
-    }
-
-    @Override
-    public ListIterator listIterator(int index) {
-        return null;
-    }
-
     @Override
     public List subList(int fromIndex, int toIndex) {
 
@@ -215,5 +199,37 @@ public class MyList<T> implements List {
     public T[] toArray(Object[] a) {
         return  null;
     }
+
+    @Override
+    public Iterator iterator() {
+        return new MyIterator<>(obj);
+    }
+
+    @Override
+    public ListIterator listIterator() {
+        return null;
+    }
+
+    @Override
+    public ListIterator listIterator(int index) {
+        return null;
+    }
+
+//    private class Itr<E> implements Iterator<E> {
+//
+//        int nextIndex = 0;
+//
+//        @Override
+//        public boolean hasNext() {
+//            return nextIndex < size;
+//        }
+//
+//        @Override
+//        public E next() {
+//            if(nextIndex >= size)
+//                throw new IndexOutOfBoundsException("只有" + size + "元素");
+//            return (E) obj[nextIndex++];
+//        }
+//    }
 }
 

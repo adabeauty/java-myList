@@ -14,6 +14,7 @@ public class Main {
         for(int i=0; i<myList.size(); i++){
             string += myList.get(i);
         }
+
         System.out.println("The sentence has "  + myList.size() + " elements. It is \"" + string +"\".");
     }
 }
